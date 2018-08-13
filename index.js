@@ -3,6 +3,7 @@ const authentication = require('./authentication');
 const requestTrigger = require('./triggers/request');
 const bundleTrigger = require('./triggers/bundle');
 const projectTrigger = require('./triggers/project');
+const requestCreate = require('./creates/request');
 
 const App = {
   // This is just shorthand to reference the installed dependencies you have. Zapier will
@@ -37,6 +38,7 @@ authentication: authentication,
 
   // If you want your creates to show up, you better include it here!
   creates: {
+      [requestCreate.key]: requestCreate,
   }
 };
 
