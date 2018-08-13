@@ -2,8 +2,17 @@ const createRequest = (z, bundle) => {
   const responsePromise = z.request({
     method: 'POST',
     url: `https://{{bundle.authData.subdomain}}.backlogminer.com/requests.json`,
-    body: JSON.stringify({
-      title: bundle.inputData.title
+    body: ({
+      subject: bundle.inputData.subject,
+      description: bundle.inputData.description,
+      externalid: bundle.inputData.externalid,
+      externalsystem: bundle.inputData.externalsystem,
+      release: bundle.inputData.release,
+      active: bundle.inputData.active,
+      statusname: bundle.inputData.statusname,
+      priorityname: bundle.inputData.priorityname,
+      requestcategoryname: bundle.inputData.requestcategoryname,
+      externallink: bundle.inputData.externallink
     })
   });
   return responsePromise
