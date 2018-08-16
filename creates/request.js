@@ -1,7 +1,7 @@
 const createRequest = (z, bundle) => {
   const responsePromise = z.request({
     method: 'POST',
-    url: `https://{{bundle.authData.subdomain}}.backlogminer.com/requests.json`,
+    url: `https://{{bundle.authData.subdomain}}.backlogminer.com/requests/upsert.json`,
     body: ({
       subject: bundle.inputData.subject,
       description: bundle.inputData.description,
